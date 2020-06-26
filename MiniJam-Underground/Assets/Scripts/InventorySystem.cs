@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class InventorySystem : MonoBehaviour
 {
-    private List<Item> items = new List<Item>();
+    [HideInInspector]
+    public List<Item> items = new List<Item>();
     public Image[] slots;
     private int numOfItems = 0;
 
@@ -20,7 +21,7 @@ public class InventorySystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    if (numOfItems == items.Count)
+    if (numOfItems == slots.Length)
     {
     canIncrease = false;
     }
