@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
-public class InventorySystem : MonoBehaviour
+public static class InventorySystem : MonoBehaviour
 {
-    private List<Item> items = new List<Item>();
+    private static List<Item> items = new List<Item>();
     
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class InventorySystem : MonoBehaviour
     }
 
 
-    void Add(Item item)
+    public static void Add(Item item)
     {
         items.Add(item);
     }
