@@ -2,23 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorKey : Item
+public class DoorKey : MonoBehaviour
 {
 [SerializeField]
 GameObject doorToOpen;
 [SerializeField]
 GameObject player;
-
+Item key;
+public Sprite icon;
 
     // Start is called before the first frame update
-    public DoorKey(string description, string title, Sprite icon, GameObject doorToOpen, GameObject player) : base(description, title, icon)
-    {
-        this.doorToOpen = doorToOpen;
-        this.player = player;
-    }
+    
 
     void Start()
     {
+    key = new Item("Opens Door", "DoorKey", icon);
     player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -31,7 +29,7 @@ GameObject player;
     {   
     if (Input.GetButtonDown("Fire1"))
     {
-    
+    player.GetComponent<InventorySystem>().Add(key);
     Destroy(gameObject);
     
     }
