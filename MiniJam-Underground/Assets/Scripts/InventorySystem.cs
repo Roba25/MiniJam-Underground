@@ -20,7 +20,7 @@ public class InventorySystem : MonoBehaviour
     }
 
 
-    void Add(Item item)
+    public void Add(Item item)
     {
         items.Add(item);
     }
