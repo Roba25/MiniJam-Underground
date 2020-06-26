@@ -32,6 +32,4 @@ public class InventorySystem : MonoBehaviour
     Debug.Log("Working");
     }
     }
-    
-    
 }
