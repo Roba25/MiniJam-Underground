@@ -14,6 +14,11 @@
           <e p="InventorySystem.cs" t="Include" />
           <e p="Item.cs" t="Include" />
           <e p="ItemContainer.cs" t="Include" />
+          <e p="Menu" t="Include">
+            <e p="MainMenu.cs" t="Include" />
+            <e p="MenuManager.cs" t="Include" />
+            <e p="MenuName.cs" t="Include" />
+          </e>
           <e p="PlayerController2D.cs" t="Include" />
         </e>
       </e>
