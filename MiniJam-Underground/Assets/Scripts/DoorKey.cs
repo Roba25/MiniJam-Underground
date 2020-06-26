@@ -11,7 +11,7 @@ GameObject doorToOpen;
 GameObject player;
 Item key;
 public Sprite icon;
-
+public float maxRange;
     // Start is called before the first frame update
     
 
@@ -28,11 +28,16 @@ public Sprite icon;
     }
     void OnMouseOver()
     {   
-    if (Input.GetButtonDown("Fire1"))
+    if (Input.GetButtonDown("Fire1") && Vector2.Distance(transform.position, player.transform.position) < maxRange)
+    {
+    if (player.GetComponent<InventorySystem>().canIncrease)
     {
     player.GetComponent<InventorySystem>().Add(key);
-    
-    
+    Debug.Log("I picked up a key!");
+    Destroy(gameObject);
+    } else {
+    Debug.Log("My inventory is full!");
     }
-    }
+}
+}
 }

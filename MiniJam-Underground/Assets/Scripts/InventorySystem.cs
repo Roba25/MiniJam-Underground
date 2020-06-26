@@ -11,7 +11,7 @@ public class InventorySystem : MonoBehaviour
     public Image[] slots;
     private int numOfItems = 0;
 
-    private bool canIncrease = true;
+    public bool canIncrease = true;
     // Start is called before the first frame update
     void Start()
     {

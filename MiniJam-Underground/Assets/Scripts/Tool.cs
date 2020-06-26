@@ -22,19 +22,16 @@ public Sprite icon;
     }
     void OnMouseOver()
     {
-    if (Input.GetButtonDown("Fire1"))
+    if (Input.GetButtonDown("Fire1") && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 5)
     {
-    if (inventory.slots.Length == inventory.items.Count)
+    if (!inventory.canIncrease)
     {
     Debug.Log("Inventory is full!");
     } else {
     inventory.Add(toolItem);
     Debug.Log("I picked up a tool!");
     Destroy(gameObject);
-
     }
-
-
     }
 
 
