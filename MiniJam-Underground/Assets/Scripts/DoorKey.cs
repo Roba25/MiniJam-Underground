@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorKey : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public Sprite icon;
     if (Input.GetButtonDown("Fire1"))
     {
     player.GetComponent<InventorySystem>().Add(key);
-    Destroy(gameObject);
+    
     
     }
     }
