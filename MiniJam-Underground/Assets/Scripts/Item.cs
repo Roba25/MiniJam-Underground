@@ -13,6 +13,10 @@ public class Item
       this.description = description;
       this.title = title;
       this.icon = Resources.Load<Sprite>("Graphics/Items/" + title);
+      if (this.icon == null)
+      {
+      this.icon = icon;
+      }
       
    }
    public string GetDescription() {
