@@ -10,6 +10,7 @@ public class InventorySystem : MonoBehaviour
     public Image[] slots;
     private int numOfItems = 0;
 
+    private bool canIncrease = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,10 @@ public class InventorySystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+    if (numOfItems == items.Count)
+    {
+    canIncrease = false;
+    }
     }
 
 
@@ -33,8 +37,10 @@ public class InventorySystem : MonoBehaviour
         {
         Debug.Log("Working");
         }
-
+        if (canIncrease)
+        {
         numOfItems++;
+        }
 
     }
 }
