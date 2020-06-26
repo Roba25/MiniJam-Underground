@@ -10,6 +10,9 @@ public  abstract class Item : MonoBehaviour
 
    public Item(string description, string title, Sprite icon)
    {
+      this.description = description;
+      this.title = title;
+      this.icon = Resources.Load<Sprite>("Graphics/Items/" + title);
       
    }
    
