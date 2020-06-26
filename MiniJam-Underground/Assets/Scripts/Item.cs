@@ -15,5 +15,14 @@ public  abstract class Item : MonoBehaviour
       this.icon = Resources.Load<Sprite>("Graphics/Items/" + title);
       
    }
-   
+   public string GetDescription() {
+   return description;
+   }
+   public string GetTitle() {
+   return title;
+   }
+   public Sprite GetIcon() {
+   return icon;
+   }
+
 }

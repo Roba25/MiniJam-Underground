@@ -31,7 +31,9 @@ GameObject player;
     {   
     if (Input.GetButtonDown("Fire1"))
     {
+    
     Destroy(gameObject);
+    
     }
     }
 }
