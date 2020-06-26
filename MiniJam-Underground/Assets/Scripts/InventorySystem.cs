@@ -8,7 +8,7 @@ public class InventorySystem : MonoBehaviour
 {
     private List<Item> items = new List<Item>();
     public Image[] slots;
-    
+    private int numOfItems = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +26,15 @@ public class InventorySystem : MonoBehaviour
     public void Add(Item item)
     {
         items.Add(item);
-    slots[0].GetComponent<Image>().sprite = items[0].GetIcon();
-    if (slots[0].sprite == items[0].GetIcon())
-    {
-    Debug.Log("Working");
-    }
+        
+        slots[numOfItems].GetComponent<Image>().sprite = items[numOfItems].GetIcon();
+       
+        if (slots[numOfItems].sprite == items[numOfItems].GetIcon())
+        {
+        Debug.Log("Working");
+        }
+
+        numOfItems++;
+
     }
 }
