@@ -16,6 +16,7 @@
             <e p="GameAudioSource.cs" t="Include" />
           </e>
           <e p="DoorKey.cs" t="Include" />
+          <e p="Effect.cs" t="Include" />
           <e p="Generator.cs" t="Include" />
           <e p="InventorySystem.cs" t="Include" />
           <e p="Item.cs" t="Include" />
