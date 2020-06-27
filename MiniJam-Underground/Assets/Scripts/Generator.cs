@@ -2,13 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Generator : MonoBehaviour
 {
    [HideInInspector]
    public bool isEnabled = false;
    private int toolsUsed = 0;
+   
    GameObject player;
+
+   public TextMeshProUGUI dialogueText;
+   public GameObject dialoguePanel;
    void Start()
    {
    player = GameObject.FindGameObjectWithTag("Player");
@@ -39,11 +44,9 @@ public class Generator : MonoBehaviour
    if (player.GetComponent<InventorySystem>().items[i].GetDescription() == "Repairs Generator")
    {
    ToolUsed();
-   }   
+   
+   }  
    }
    }
-
-
    }
-
 }
