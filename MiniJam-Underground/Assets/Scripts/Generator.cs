@@ -47,6 +47,7 @@ public class Generator : MonoBehaviour
    {
    ToolUsed();
    dialogueManager.TriggerDialogue("Repaired: " + toolsUsed.ToString() + "/3");
+   break;
    }  
    }
    }

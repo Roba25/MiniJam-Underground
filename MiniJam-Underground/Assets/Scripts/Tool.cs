@@ -24,13 +24,15 @@ DialogueManager dialogueManager;
     }
     void OnMouseOver()
     {
-    if (Input.GetButtonDown("Fire1") && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 0.5)
+    if (Input.GetButtonDown("Fire1") && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 1f)
     {
     if (!inventory.canIncrease)
     {
     Debug.Log("Inventory is full!");
     dialogueManager.TriggerDialogue("Your inventory is full!");
-    } else {
+    } 
+    
+    else {
     inventory.Add(toolItem);
     Debug.Log("I picked up a tool!");
     dialogueManager.TriggerDialogue("You picked up a tool!");
