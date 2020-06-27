@@ -10,8 +10,9 @@ public class InventorySystem : MonoBehaviour
     public List<Item> items = new List<Item>();
     public Image[] slots;
     private int numOfItems = 0;
-
     public bool canIncrease = true;
+    public GameObject inventoryPanel;
+    public bool inventoryOn = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,26 @@ public class InventorySystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    if (Input.GetKeyDown("tab"))
+    {
+    if (inventoryOn)
+    {
+    inventoryPanel.SetActive(false);
+    inventoryOn = false;
+    } else {
+    inventoryPanel.SetActive(true);
+    inventoryOn = true;
+    }
+
+
+
+
+    }
+
+
+
+
+
     if (numOfItems == slots.Length)
     {
     canIncrease = false;
