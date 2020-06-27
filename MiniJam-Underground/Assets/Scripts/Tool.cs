@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tool : MonoBehaviour
 {
-Item toolItem;
+public static Item toolItem;
 InventorySystem inventory;
 public Sprite icon;
 

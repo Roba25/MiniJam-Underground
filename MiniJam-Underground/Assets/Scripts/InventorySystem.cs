@@ -44,4 +44,22 @@ public class InventorySystem : MonoBehaviour
         }
 
     }
-}
+    public void Remove(Item item)
+    {
+        items.Remove(item);
+        for (int i = 0; i < slots.Length; i++)
+        {
+        if (slots[i].GetComponent<Image>().sprite == item.GetIcon())
+        {
+        slots[i].GetComponent<Image>().sprite = null;
+        numOfItems--;
+        }
+
+        }
+
+
+
+        }
+
+    }
+

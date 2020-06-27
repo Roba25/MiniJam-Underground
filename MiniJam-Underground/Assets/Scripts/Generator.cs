@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
+   [HideInInspector]
+   public bool isEnabled = false;
    private int toolsUsed = 0;
    GameObject player;
    void Start()
@@ -15,7 +17,8 @@ public class Generator : MonoBehaviour
    void ToolUsed()
    {
       toolsUsed++;
-      
+      Debug.Log("Repaired: " + toolsUsed + "/3");
+      player.GetComponent<InventorySystem>().Remove(Tool.toolItem);
    }
 
    private void Update()
@@ -23,12 +26,14 @@ public class Generator : MonoBehaviour
       if (toolsUsed == 3)
       {
          //Generator is on
+         isEnabled = true;
       }
    }
    void OnMouseOver()   
    {
    if (Input.GetButtonDown("Fire1"))
    {
+   Debug.Log("Clicked");
    for (int i = 0; i < player.GetComponent<InventorySystem>().items.Count; i++)
    {
    if (player.GetComponent<InventorySystem>().items[i].GetDescription() == "Repairs Generator")
@@ -36,11 +41,6 @@ public class Generator : MonoBehaviour
    ToolUsed();
    }   
    }
-
-
-
-
-
    }
 
 
