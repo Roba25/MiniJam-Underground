@@ -25,7 +25,7 @@ dialogueManager = GameObject.FindGameObjectWithTag("GameController").GetComponen
 
 void OnMouseOver()
 {
-if (Input.GetButtonDown("Fire1"))
+if (Input.GetButtonDown("Fire1") && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 1)
 {
 if (generator.isEnabled)
 {

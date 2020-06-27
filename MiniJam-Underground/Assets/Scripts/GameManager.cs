@@ -20,7 +20,8 @@ DialogueManager dialogueManager;
     {
     if (fragmentsFound == 3)
     {
-     finalKey = new Item("Opens Final Door", "Final Key", icon);
+        
+    finalKey = new Item("Opens Final Door", "Final Key", icon);
     inventory.Remove(KeyFragment.fragment);
     inventory.Add(finalKey);
     dialogueManager.TriggerDialogue("The fragments formed a key!");
