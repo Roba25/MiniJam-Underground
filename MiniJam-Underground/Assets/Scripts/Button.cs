@@ -5,18 +5,19 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
 public GameObject door;
-
-
-
-
-Generator generator;
 bool isPressed = false;
+
+
+
+DialogueManager dialogueManager;
+Generator generator;
 
 
 
 void Start()
 {
 generator = GameObject.FindGameObjectWithTag("Generator").GetComponent<Generator>();
+dialogueManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<DialogueManager>();
 }
 
 
@@ -29,6 +30,7 @@ if (Input.GetButtonDown("Fire1"))
 if (generator.isEnabled)
 {
 Debug.Log("Seems like it worked, this light turned on.");
+dialogueManager.TriggerDialogue("The button worked!");
 if (!isPressed)
 {
 isPressed = true;
@@ -41,6 +43,7 @@ door.SetActive(true);
 }
 } else {
 Debug.Log("You pushed the button but nothing happened.");
+dialogueManager.TriggerDialogue("Doesent work, maybe I need to turn on the power?");
 //  I will hook this up to be said by the player
 
 }
