@@ -11,6 +11,8 @@ public class Generator : MonoBehaviour
    private int toolsUsed = 0;
    
    GameObject player;
+   [SerializeField]
+   GameObject light;
 
    DialogueManager dialogueManager;
    void Start()
@@ -30,7 +32,7 @@ public class Generator : MonoBehaviour
    {
       if (toolsUsed == 3)
       {
-         //Generator is on
+         light.SetActive(true);
          isEnabled = true;
       }
    }
