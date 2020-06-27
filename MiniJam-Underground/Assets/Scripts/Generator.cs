@@ -12,10 +12,10 @@ public class Generator : MonoBehaviour
    
    GameObject player;
 
-   public TextMeshProUGUI dialogueText;
-   public GameObject dialoguePanel;
+   DialogueManager dialogueManager;
    void Start()
    {
+   dialogueManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<DialogueManager>();
    player = GameObject.FindGameObjectWithTag("Player");
    }
 
@@ -44,7 +44,7 @@ public class Generator : MonoBehaviour
    if (player.GetComponent<InventorySystem>().items[i].GetDescription() == "Repairs Generator")
    {
    ToolUsed();
-   
+   dialogueManager.TriggerDialogue("Repaired: " + toolsUsed.ToString() + "/3");
    }  
    }
    }

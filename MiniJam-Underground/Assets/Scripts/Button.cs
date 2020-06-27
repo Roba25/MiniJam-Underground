@@ -4,8 +4,23 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
+public GameObject door;
+
+
+
+
 Generator generator;
 bool isPressed = false;
+
+
+
+void Start()
+{
+generator = GameObject.FindGameObjectWithTag("Generator").GetComponent<Generator>();
+}
+
+
+
 
 void OnMouseOver()
 {
@@ -17,9 +32,11 @@ Debug.Log("Seems like it worked, this light turned on.");
 if (!isPressed)
 {
 isPressed = true;
+door.SetActive(false);
 //  Open 1 door but close the other.
 } else {
 isPressed = false;
+door.SetActive(true);
 //  Do the same thing but opposite doors.
 }
 } else {
