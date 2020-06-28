@@ -45,7 +45,7 @@ public class Generator : MonoBehaviour
    }
    void OnMouseOver()   
    {
-   if (Input.GetButtonDown("Fire1") && Vector2.Distance(transform.position, player.transform.position) > 5)
+   if (Input.GetButtonDown("Fire1"))
    {
    Debug.Log("Clicked");
    for (int i = 0; i < player.GetComponent<InventorySystem>().items.Count; i++)
