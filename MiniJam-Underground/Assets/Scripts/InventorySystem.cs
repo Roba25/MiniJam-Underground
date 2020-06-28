@@ -74,7 +74,9 @@ public class InventorySystem : MonoBehaviour
         {
         slots[i].GetComponent<Image>().sprite = null;
         numOfItems--;
+        break;
         }
+        
 
         }
 

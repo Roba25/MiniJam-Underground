@@ -15,16 +15,16 @@ DialogueManager dialogueManager;
     }
     void OnMouseOver()
     {
-    Debug.Log("Mouse over");
+    
     if (Input.GetButtonDown("Fire1"))
     {
-    Debug.Log("Clicked");
+    
     for (int i = 0; i < inventory.items.Count; i++)
     {
     if (inventory.items[i].GetDescription() == "Opens Final Door")
     {
+    dialogueManager.TriggerDialogue("You have a key!");
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    Debug.Log("You have a key!");
     } else {
     dialogueManager.TriggerDialogue("The door is locked with a key!");
     }

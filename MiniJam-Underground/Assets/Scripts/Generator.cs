@@ -15,6 +15,7 @@ public class Generator : MonoBehaviour
    GameObject light;
 
    DialogueManager dialogueManager;
+   bool hasRemoved;
    void Start()
    {
    dialogueManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<DialogueManager>();
@@ -23,9 +24,15 @@ public class Generator : MonoBehaviour
 
    void ToolUsed()
    {
+      if (!hasRemoved)
+      {
       toolsUsed++;
       Debug.Log("Repaired: " + toolsUsed + "/3");
-      player.GetComponent<InventorySystem>().Remove(Tool.toolItem);
+      player.GetComponent<InventorySystem>().Remove(Tool.toolItem);      
+      dialogueManager.TriggerDialogue("Repaired: " + toolsUsed.ToString() + "/3");
+      
+      }
+      
    }
 
    private void Update()
@@ -38,7 +45,7 @@ public class Generator : MonoBehaviour
    }
    void OnMouseOver()   
    {
-   if (Input.GetButtonDown("Fire1"))
+   if (Input.GetButtonDown("Fire1") && Vector2.Distance(transform.position, player.transform.position) > 5)
    {
    Debug.Log("Clicked");
    for (int i = 0; i < player.GetComponent<InventorySystem>().items.Count; i++)
@@ -46,7 +53,6 @@ public class Generator : MonoBehaviour
    if (player.GetComponent<InventorySystem>().items[i].GetDescription() == "Repairs Generator")
    {
    ToolUsed();
-   dialogueManager.TriggerDialogue("Repaired: " + toolsUsed.ToString() + "/3");
    break;
    }  
    }

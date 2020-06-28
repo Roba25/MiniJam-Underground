@@ -5,8 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 public int fragmentsFound;
+public int codePeicesFound;
 Item finalKey;
+Item finalCode;
 public Sprite icon;
+public Sprite codeIcon;
 InventorySystem inventory;
 DialogueManager dialogueManager;
 
@@ -27,6 +30,14 @@ DialogueManager dialogueManager;
     dialogueManager.TriggerDialogue("The fragments formed a key!");
     fragmentsFound = 0;
     }    
+    if (codePeicesFound == 2)
+    {
+    finalCode = new Item("Has the code!", "Final Code", codeIcon);
+    inventory.Remove(CodePaper.codePeice);
+    inventory.Add(finalCode);
+    dialogueManager.TriggerDialogue("The code!");
+    codePeicesFound = 0;
+    }
     }
 
 
