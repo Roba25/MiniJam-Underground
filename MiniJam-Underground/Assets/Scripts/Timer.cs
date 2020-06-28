@@ -20,7 +20,10 @@ public TextMeshProUGUI timeText;
         oneSecond = 0;
         time++;
     }
+    if (timeText != null)
+    {
     timeText.text = ("TIME: " + time.ToString());
+    }
 
     }
 

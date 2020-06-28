@@ -15,6 +15,7 @@ DialogueManager dialogueManager;
 
     private void Start() 
     {
+    DontDestroyOnLoad(gameObject);
     inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<InventorySystem>();
     dialogueManager = GetComponent<DialogueManager>();
     }
