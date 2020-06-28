@@ -17,7 +17,7 @@ public Sprite icon;
     }
     void OnMouseOver()
     {
-    if (Input.GetButtonDown("Fire1") && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) > 5)
+    if (Input.GetButtonDown("Fire1") && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 5)
     {
     Debug.Log("Clicked");
     inventory.Add(codePeice);
