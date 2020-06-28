@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
 int time = 0;
 private float oneSecond;
-TextMeshProUGUI timeText;
+public TextMeshProUGUI timeText;
 
 
 
@@ -20,7 +20,7 @@ TextMeshProUGUI timeText;
         oneSecond = 0;
         time++;
     }
-    timeText.text = time.ToString();
+    timeText.text = ("TIME: " + time.ToString());
 
     }
 
