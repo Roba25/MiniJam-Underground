@@ -5,14 +5,21 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-float time = 0;
+int time = 0;
+private float oneSecond;
 TextMeshProUGUI timeText;
 
 
 
     void Update()
     {
-    time += Time.deltaTime;
+        
+    oneSecond+= Time.deltaTime;
+    if (oneSecond >= 1)
+    {
+        oneSecond = 0;
+        time++;
+    }
     timeText.text = time.ToString();
 
     }
